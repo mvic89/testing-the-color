@@ -1,26 +1,29 @@
  import {render, screen} from '@testing-library/react'
  import Header from './index'
 
-test("that the page title is rendered correctly on the screen", () => {
+test("that the home link element is rendered correctly on the screen", () => {
   render(<Header/>)
 
-  const pageTitle = screen.getByText(/Header!/i);
+  const homeElement = screen.getByRole('heading', {name:/home/i});
 
-  expect(pageTitle).toBeInTheDocument();
+  expect(homeElement).toBeInTheDocument()
 })
 
-test("that the h1 element exists", () => {
-  render(<Header/>)
-
-  const headingElement = screen.getByRole('heading');
-
-  expect(headingElement).toBeInTheDocument();
-})
-
-test("that the h2 element doesn't exist", () => {
-  render(<Header/>)
-
-  const wrongHeading = screen.queryByRole('header');
+describe("test that Navigation comp is rendered correctly inside Header comp.", () => {
   
-  expect(wrongHeading).not.toBeInTheDocument()
+  test("that the rgb link is rendered correctly inside the Header comp.", () => {
+    render(<Header/>)
+  
+    const rgbLink = screen.getByRole('link', {name:/rgb/i});
+  
+    expect(rgbLink).toBeInTheDocument()
+  })
+
+  test("that the hex link is rendered correctly inside the Header comp.", () => {
+    render(<Header/>)
+  
+    const hexLink = screen.getByRole('link', {name:/hex/i});
+  
+    expect(hexLink).toBeInTheDocument()
+  })
 })
