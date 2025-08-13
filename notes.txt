@@ -12,3 +12,20 @@ MainContent component (for /home page)
     Information about RGB / and HEX color system.
 Footer component
   Footer content. to be added when the rest is done.
+
+---------------------------------------------
+Describe - page 15
+React Testing Library Queries:
+  getByRole() - page 20. (tests element using a class attribute.)
+    Testing props (w. mockData) - page 21
+    Testing props from a parent - page 22
+  getAllBy - page 23 ('All' queries return arrays)
+  getByTestId - page 24 (if an element has a generic role (ex <div>). we can test using the id attribute)
+  get vs query - page 25
+    get: returns the matching element and throws an error the element is not found or multiple elements are found.
+    queryBy: returns the matching element and throws an error if multiple elements are found, but it returns ‘null’ if no element is found.
+
+Integration Tests - 26
+  Integrations tests are usually concerned with passing states from one component to its children.
+  
+  
