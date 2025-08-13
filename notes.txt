@@ -1,0 +1,14 @@
+Header component
+  Heading (<h1>)
+  Logotype maybe?
+  Navigation component
+    navbar with pages array that maps over two items and return 2 links to 'rgb' and 'hex'.
+ColorCard component (for /rgb and /hex pages)
+  <div> Container
+    Heading <h3> with <span>. span contains color values text.
+    Button <a> element.
+MainContent component (for /home page)
+  <div> Container
+    Information about RGB / and HEX color system.
+Footer component
+  Footer content. to be added when the rest is done.
