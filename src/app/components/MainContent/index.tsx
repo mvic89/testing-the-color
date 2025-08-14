@@ -7,8 +7,8 @@ const MainContent = () => {
         <h1>Color Picker!</h1>
         <p>This is where some subtitle is supposed to be</p>
       </div>
-      <div>
-        <Image src={'/additive-subtractive.png'} alt="subtractive-color-image" width={900} height={300} style={{height: 'auto'}}/>
+      <div className="border-2 ">
+        <Image className="w-full" src={'/additive-subtractive.png'} alt="subtractive-color-image" width={900} height={300} style={{height: 'auto'}}/>
       </div>
     </div>
 
