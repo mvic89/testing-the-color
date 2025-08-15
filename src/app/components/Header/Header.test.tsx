@@ -1,29 +1,50 @@
-//  import {render, screen} from '@testing-library/react'
-//  import Header from './index'
+ import {fireEvent, render, screen} from '@testing-library/react'
+ import Header from './index'
+ import "@testing-library/jest-dom";
 
-// test("that the home link element is rendered correctly on the screen", () => {
-//   render(<Header/>)
+ describe("testing the Header and the navlinks funcionality", () => {
+  it("renders the heading and all nav items", () => {
+    const mockSetCurrentPage = jest.fn();
+    render(<Header setCurrentPage={mockSetCurrentPage} />);
 
-//   const homeElement = screen.getByRole('heading', {name:/home/i});
+    expect(screen.getByRole("heading", { name: "Color Picker" })).toBeInTheDocument();
+    expect(screen.getByText("HOME")).toBeInTheDocument();
+    expect(screen.getByText("RGB")).toBeInTheDocument();
+    expect(screen.getByText("HEX")).toBeInTheDocument();
+  });
 
-//   expect(homeElement).toBeInTheDocument()
-// })
+  it("calls setCurrentPage with 'home' when HOME is clicked", () => {
+    const mockSetCurrentPage = jest.fn();
+    render(<Header setCurrentPage={mockSetCurrentPage} />);
 
-// describe("test that Navigation comp is rendered correctly inside Header comp.", () => {
-  
-//   test("that the rgb link is rendered correctly inside the Header comp.", () => {
-//     render(<Header/>)
-  
-//     const rgbLink = screen.getByRole('link', {name:/rgb/i});
-  
-//     expect(rgbLink).toBeInTheDocument()
-//   })
+    fireEvent.click(screen.getByText("HOME"));
+    expect(mockSetCurrentPage).toHaveBeenCalledWith("home");
+  });
 
-//   test("that the hex link is rendered correctly inside the Header comp.", () => {
-//     render(<Header/>)
-  
-//     const hexLink = screen.getByRole('link', {name:/hex/i});
-  
-//     expect(hexLink).toBeInTheDocument()
-//   })
-// })
+  it("calls setCurrentPage with 'rgb' when RGB is clicked", () => {
+    const mockSetCurrentPage = jest.fn();
+    render(<Header setCurrentPage={mockSetCurrentPage} />);
+
+    fireEvent.click(screen.getByText("RGB"));
+    expect(mockSetCurrentPage).toHaveBeenCalledWith("rgb");
+  });
+
+  it("calls setCurrentPage with 'hex' when HEX is clicked", () => {
+    const mockSetCurrentPage = jest.fn();
+    render(<Header setCurrentPage={mockSetCurrentPage} />);
+
+    fireEvent.click(screen.getByText("HEX"));
+    expect(mockSetCurrentPage).toHaveBeenCalledWith("hex");
+  });
+
+  it("calls setCurrentPage the correct number of times", () => {
+    const mockSetCurrentPage = jest.fn();
+    render(<Header setCurrentPage={mockSetCurrentPage} />);
+
+    fireEvent.click(screen.getByText("HOME"));
+    fireEvent.click(screen.getByText("RGB"));
+    fireEvent.click(screen.getByText("HEX"));
+
+    expect(mockSetCurrentPage).toHaveBeenCalledTimes(3);
+  });
+ });
