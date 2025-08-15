@@ -14,17 +14,12 @@ const Rgb = () => {
   const changeColor = () => {
     const newColor = generateRgbColor();
     setColor(newColor);
-    document.body.style.backgroundColor = newColor;
   };
 
-  useEffect(() => {
-    if (color) {
-      document.body.style.backgroundColor = color;
-    }
-  }, [color]);
-
   return (
-    <ColorPick color={color ?? ""} onClick={changeColor} />
+    <div className="min-h-screen" style={{ backgroundColor: color ?? "transparent" }}>
+      <ColorPick color={color ?? ""} onClick={changeColor} />
+    </div>
   );
 };
 
