@@ -1,8 +1,8 @@
+import ColorPick from "../components/ColorPick"
+
 const Rgb = () => {
   return (
-    <div>
-      <h1>RGB page!</h1>
-    </div>
+      <ColorPick color="RGB Background"/>
   )
 }
 
