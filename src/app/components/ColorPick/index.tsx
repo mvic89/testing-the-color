@@ -1,12 +1,13 @@
 interface ColorPickProps {
-  color: string
+  color: string,
+  onClick: () => void;
 }
 
-const ColorPick = ({color}: ColorPickProps) => {
+const ColorPick = ({color, onClick }: ColorPickProps) => {
   return (
     <div className="max-w-3xl mx-auto flex flex-col items-center border p-6">
       <h2 className="text-center text-2xl mb-4">{color}</h2>
-      <a className="inline-block p-3 px-6 rounded-lg border-2 bg-amber-300 hover:bg-amber-400 transition">
+      <a className="inline-block p-3 px-6 rounded-lg border-2 bg-amber-300 hover:bg-amber-400 transition cursor-pointer" onClick={onClick}>
         Click me!
       </a>
     </div>
