@@ -18,7 +18,7 @@ const Rgb = () => {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: color ?? "transparent" }}>
-      <ColorPick color={color ?? ""} onClick={changeColor} />
+      <ColorPick colorHeading="RGB Background:" color={color ?? ""} onClick={changeColor} />
     </div>
   );
 };
