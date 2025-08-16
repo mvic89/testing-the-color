@@ -1,0 +1,17 @@
+Page Structure:
+
+layout.tsx = the root
+  <Header> component
+  <main> element that renders Home/Hex/Rgb components as pages.
+  <Footer> component
+page.tsx = home page
+  <MainContent> component
+hex directory with page.tsx file
+  renders ColorPick component with hex changeColor functionality
+rgb directory with page.tsx file
+  renders ColorPick component with rgb changeColor functionality
+
+Integration testing states:
+  <Home> component -> <MainContent> component
+  <Rgb> component -> <ColorPick> component
+  <Hex> component -> <ColorPick> component
