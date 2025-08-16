@@ -6,17 +6,17 @@ interface HeaderProps {
 
 const Header = ({ setCurrentPage }: HeaderProps) => {
   return (
-    <header className="bg-amber-200">
-      <div className="flex flex-row justify-between px-0 py-6 w-full max-w-[1200px] mx-auto">
-        <h1>Color Picker</h1>
+    <header className="border-b">
+      <div className="flex flex-row justify-between px-6 py-6 w-full max-w-[1200px] mx-auto">
+        <h1 className="font-bold uppercase">Color Picker</h1>
         <nav className="flex gap-4 list-none">
-          <li className="cursor-pointer" onClick={() => setCurrentPage("home")}>
+          <li className="cursor-pointer font-sans font-semibold" onClick={() => setCurrentPage("home")}>
             HOME
           </li>
-          <li className="cursor-pointer" onClick={() => setCurrentPage("rgb")}>
+          <li className="cursor-pointer font-sans font-semibold" onClick={() => setCurrentPage("rgb")}>
             RGB
           </li>
-          <li className="cursor-pointer" onClick={() => setCurrentPage("hex")}>
+          <li className="cursor-pointer font-sans font-semibold" onClick={() => setCurrentPage("hex")}>
             HEX
           </li>
         </nav>

@@ -22,7 +22,7 @@ const Hex = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: color ?? "transparent" }}>
+    <div className="min-h-screen flex flex-col items-center justify-center" style={{ backgroundColor: color ?? "transparent" }}>
       <ColorPick colorHeading="HEX Background:" color={color ?? ""} onClick={changeColor} />
     </div>
   );
