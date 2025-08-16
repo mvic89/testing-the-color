@@ -1,5 +1,5 @@
 import {render, screen} from "@testing-library/react"
-import Footer from "../Footer"
+import Footer from "./index"
 
 it('renders the footer paragraph text content', () => {
   render(<Footer/>);

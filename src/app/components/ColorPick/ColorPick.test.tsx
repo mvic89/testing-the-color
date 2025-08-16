@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import ColorPick from '../ColorPick'; 
+import ColorPick from './index'; 
 
 describe('testing elements, props and button functionality in ColorPick comp.', () => {
   it('renders the color heading', () => {
