@@ -12,6 +12,7 @@ rgb directory with page.tsx file
   renders ColorPick component with rgb changeColor functionality
 
 Integration testing states:
+  <Header> component -> setCurrentPage (<Home> / <Rgb> / <Hex> commponents)
   <Home> component -> <MainContent> component
   <Rgb> component -> <ColorPick> component
   <Hex> component -> <ColorPick> component

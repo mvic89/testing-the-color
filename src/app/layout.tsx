@@ -26,10 +26,10 @@ export default function RootLayout() {
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body className="h-full flex flex-col">
         <Header setCurrentPage={setCurrentPage} />
-        <main className="grow">{renderPage()}</main>
+        <main className="flex-grow flex flex-col ">{renderPage()}</main>
         <Footer />
       </body>
     </html>
