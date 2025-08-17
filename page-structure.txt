@@ -1,5 +1,6 @@
-Page Structure:
+ColorPicker is a SPA where you can generate different RGB/HEX background colors by clicking the button.
 
+Page Structure:
 layout.tsx = the root
   <Header> component
   <main> element that renders Home/Hex/Rgb components as pages.
@@ -10,6 +11,15 @@ hex directory with page.tsx file
   renders ColorPick component with hex changeColor functionality
 rgb directory with page.tsx file
   renders ColorPick component with rgb changeColor functionality
+
+Unit test suites:
+  ColorPick.test.tsx
+  Footer.test.tsx
+  Header.test.tsx
+  MainContent.test.tsx
+
+Integration test suite:
+  Home.test.tsx
 
 Integration testing states:
   <Header> component -> setCurrentPage (<Home> / <Rgb> / <Hex> commponents)
