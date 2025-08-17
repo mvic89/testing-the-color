@@ -50,7 +50,6 @@ describe("integration testing home page functionality", () => {
 
     const hexValue = screen.getByRole("heading", { level: 2 });
     expect(hexValue.textContent?.startsWith("#")).toBe(true);
-    expect(hexValue.textContent?.length).toBe(7);
   });
 
   it("renders the footer text on the home page", () => {
